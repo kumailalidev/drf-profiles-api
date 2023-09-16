@@ -21,7 +21,10 @@ class UserProfileSerializer(serializers.ModelSerializer):
             }
         }
 
-    # Overriding a default create function of serializer to create object
+    # - Overriding a default create function of ModelSerializer to create objects;
+    #   Instead of using default create function it should use create_user function
+    #   of model UserProfile to create user objects and create a password as a HASH
+    #   instead of plan text.
     def create(self, validate_data):
         """Create and return a new user"""
         user = models.UserProfile.objects.create_user(
