@@ -9,9 +9,9 @@ router = DefaultRouter()
 router.register("hello-viewset", views.HelloViewSet, basename="hello-viewset")
 
 # Registering a UserProfileViewSet with router
-# NOTE: base name is not required because it is automatically configured by DRF
+# NOTE: basename is not required because it is automatically configured by DRF
 #       UserProfileViewSet has a queryset model UserProfile, basename is same
-#       as queryset model.
+#       as queryset model name.
 router.register("profile", views.UserProfileViewSet)
 
 urlpatterns = [
