@@ -10,7 +10,7 @@ class UpdateOwnProfile(permissions.BasePermission):
         """Check user is trying to edit their own profile"""
 
         # If the HTTP request method is SAFE_METHOD i.e
-        # it does not change the object return True.
+        # it does not change the object (LIST or CREATE Objects) return True.
         if request.method in permissions.SAFE_METHODS:
             return True
 
